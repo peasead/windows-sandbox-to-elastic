@@ -10,6 +10,7 @@ Once you spin this up, you'll have:
 * Winlogbeat
 * Packetbeat
 * Elastic Agent
+* Sysmon w/SOS config
 * Microsoft Office (Word, PowerPoint, Excel, Outlook, etc.)
 * Adobe Reader
 * Wireshark
@@ -46,7 +47,6 @@ Before you run this, you'll need to update the variables in [provision.ps1](prov
 Set-Variable -Name "elastic-version" -Value "7.15.0" 
 Set-Variable -Name "elastic-fleet-url" -Value "your-elastic-fleet-url"
 Set-Variable -Name "elastic-fleet-enrollment-token" -Value "your-elastic-fleet-enrollment-token"
-$ProgressPreference = 'SilentlyContinue'
 
 Set-Variable -Name "elastic-username" -Value "your-elastic-stack-username (default is elastic)"
 Set-Variable -Name "elastic-passphrase" -Value "your-elastic-passphrase"
