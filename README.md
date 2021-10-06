@@ -19,6 +19,8 @@ Once you spin this up, you'll have:
   * SysInternals
   * Process Hacker
 
+Everything will be reporting into Elastic Cloud.
+
 ## Getting Started
 
 This is pretty straight forward, but you'll need to do a bit of preparation work.
@@ -38,7 +40,7 @@ If you need help with the Elastic parts, you can use this [dev (read, **NOT FOR 
 
 ### Preparation
 
-Before you run this, you'll need to update the variables in `[provision.ps1](provision.ps1)` to your environment.
+Before you run this, you'll need to update the variables in [provision.ps1](provision.ps1) to your environment.
 
 ```
 Set-Variable -Name "elastic-version" -Value "7.15.0" 
@@ -56,12 +58,44 @@ Set-Variable -Name "elastic-cloud-id" -Value "your-elastic-cloud-id"
 Let's get after it.
 
 ```
-git clone https://github.com/peasead/windows-10-elastic-sandbox.git
-cd windows-10-elastic-sandbox
+git clone https://github.com/peasead/windows-10-sandbox-to-elastic.git
+cd windows-10-sandbox-to-elastic
 vagrant up
 ```
 
-It'll take a while, but once you're done, you'll be able to run `vagrant rdp` (if you don't already have your RDP program open, you may need to run it twice) to access your sandbox and it should be enrolled in your provided Fleet and Elastic Cloud account with Packetbeat and Winlogbeat.
+## Tips
+
+These must be run from the `windows-10-sandbox-to-elastic\` directory.
+
+Connect via RDP (may  have to run twice if RDP program isn't open)
+```
+vagrant rdp
+```
+
+Connect via SSH
+```
+vagrant ssh
+```
+
+Upload malware to box
+```
+vagrant upload malware.virus "c:\users\vagrant\desktop\malware.virus"
+```
+
+Take a snapshot before malware detonation
+```
+vagrant snapshot save pre-malware
+```
+
+Restore a snapshot (to reset back to clean version without having to rebuild)
+```
+vagrant snapshot restore pre-malware
+```
+
+Destroy everything and start over
+```
+vagrant destroy -f
+```
 
 ## Troubleshooting
 
