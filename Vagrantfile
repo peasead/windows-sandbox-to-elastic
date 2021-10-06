@@ -1,10 +1,6 @@
 Vagrant.configure("2") do |config|
-
-  config.winrm.username = "vagrant"
-  config.winrm.password = "vagrant"
-  config.ssh.username = "vagrant"
-  config.ssh.password = "vagrant"
-
+  config.vagrant.plugins = ["vagrant-reload"]
+  
   config.vm.define "windows-victim", primary: true do |cfg|
     cfg.vm.box = "gusztavvargadr/windows-10"
     cfg.vm.hostname = "local-cattle-#{rand(01..99)}"
