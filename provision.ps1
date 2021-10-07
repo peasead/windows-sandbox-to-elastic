@@ -6,7 +6,6 @@ Set-Variable -Name "elastic-fleet-enrollment-token" -Value "your-elastic-fleet-e
 $ProgressPreference = 'SilentlyContinue'
 
 ## Elastic Cloud (Winlogbeat / Packetbeat)
-
 Set-Variable -Name "elastic-username" -Value "your-elastic-stack-username (default is elastic)"
 Set-Variable -Name "elastic-passphrase" -Value "your-elastic-passphrase"
 Set-Variable -Name "elastic-cloud-id" -Value "your-elastic-cloud-id"
