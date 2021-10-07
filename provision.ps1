@@ -2,7 +2,7 @@
 ## Elastic Agent / Fleet
 Set-Variable -Name "elastic-version" -Value "7.15.0" 
 Set-Variable -Name "elastic-fleet-url" -Value "your-elastic-fleet-url"
-Set-Variable -Name "elastic-fleet-enrollment-token" -Value "your-elastic-fleet-enrollment-token"
+Set-Variable -Name "elastic-fleet-policy-enrollment-token" -Value "your-elastic-fleet-policy-enrollment-token"
 $ProgressPreference = 'SilentlyContinue'
 
 ## Elastic Cloud (Winlogbeat / Packetbeat)
@@ -39,7 +39,7 @@ start-service winlogbeat
 # Elastic Agent
 Invoke-WebRequest -Uri https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-${elastic-version}-windows-x86_64.zip -OutFile "c:\users\vagrant\Desktop\elastic-agent.zip"
 Expand-Archive -F c:\users\vagrant\desktop\elastic-agent.zip -DestinationPath c:\users\vagrant\desktop\elastic-agent
-& c:\users\vagrant\Desktop\elastic-agent\elastic-agent-${elastic-version}-windows-x86_64\elastic-agent.exe install -f --url=${elastic-fleet-url} --enrollment-token=${elastic-fleet-enrollment-token}
+& c:\users\vagrant\Desktop\elastic-agent\elastic-agent-${elastic-version}-windows-x86_64\elastic-agent.exe install -f --url=${elastic-fleet-url} --enrollment-token=${elastic-fleet-policy-enrollment-token}
 
 # WireShark
 choco install wireshark -y

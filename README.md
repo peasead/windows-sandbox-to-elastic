@@ -46,7 +46,7 @@ Before you run this, you'll need to update the variables in [provision.ps1](prov
 ```
 Set-Variable -Name "elastic-version" -Value "7.15.0" 
 Set-Variable -Name "elastic-fleet-url" -Value "your-elastic-fleet-url"
-Set-Variable -Name "elastic-fleet-enrollment-token" -Value "your-elastic-fleet-enrollment-token"
+Set-Variable -Name "elastic-fleet-policy-enrollment-token" -Value "elastic-fleet-policy-enrollment-token"
 
 Set-Variable -Name "elastic-username" -Value "your-elastic-stack-username (default is elastic)"
 Set-Variable -Name "elastic-passphrase" -Value "your-elastic-passphrase"
