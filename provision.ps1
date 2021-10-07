@@ -21,7 +21,7 @@ c:\users\vagrant\desktop\npcap.exe /S /winpcap_mode=yes
 ## Install Packetbeat
 choco install packetbeat -y
 (Get-Content c:\users\vagrant\desktop\packetbeat.yml).replace('elastic-username', ${elastic-username}) | Set-Content C:\users\vagrant\Desktop\packetbeat.yml
-(Get-Content c:\users\vagrant\desktop\packetbeat.yml).replace('elastic-password', ${elastic-password}) | Set-Content C:\users\vagrant\Desktop\packetbeat.yml
+(Get-Content c:\users\vagrant\desktop\packetbeat.yml).replace('elastic-passphrase', ${elastic-passphrase}) | Set-Content C:\users\vagrant\Desktop\packetbeat.yml
 (Get-Content c:\users\vagrant\desktop\packetbeat.yml).replace('elastic-cloud-id', ${elastic-cloud-id}) | Set-Content C:\users\vagrant\Desktop\packetbeat.yml
 Move-Item -force c:\users\vagrant\desktop\packetbeat.yml c:\programdata\chocolatey\lib\packetbeat\tools\
 start-service packetbeat
@@ -29,7 +29,7 @@ start-service packetbeat
 # Winlogbeat
 choco install winlogbeat -y
 (Get-Content c:\users\vagrant\desktop\winlogbeat.yml).replace('elastic-username', ${elastic-username}) | Set-Content C:\users\vagrant\Desktop\winlogbeat.yml
-(Get-Content c:\users\vagrant\desktop\winlogbeat.yml).replace('elastic-password', ${elastic-password}) | Set-Content C:\users\vagrant\Desktop\winlogbeat.yml
+(Get-Content c:\users\vagrant\desktop\winlogbeat.yml).replace('elastic-passphrase', ${elastic-passphrase}) | Set-Content C:\users\vagrant\Desktop\winlogbeat.yml
 (Get-Content c:\users\vagrant\desktop\winlogbeat.yml).replace('elastic-cloud-id', ${elastic-cloud-id}) | Set-Content C:\users\vagrant\Desktop\winlogbeat.yml
 Move-Item -force c:\users\vagrant\desktop\winlogbeat.yml c:\programdata\chocolatey\lib\winlogbeat\tools\
 start-service winlogbeat
