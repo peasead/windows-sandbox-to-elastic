@@ -1,5 +1,4 @@
 Vagrant.configure("2") do |config|
-  config.vagrant.plugins = ["vagrant-reload"]
   
   config.vm.define "windows-victim", primary: true do |cfg|
     cfg.vm.box = "StefanScherer/windows_10"
