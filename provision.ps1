@@ -47,8 +47,7 @@ choco install wireshark -y
 choco install adobereader -y
 
 # Microsoft Outlook
-# echo "Installing Office. This takes a while and there won't be any output."
-# choco install office365business --params="/productid:O365HomePremRetail" /exclude:"Access Groove Lync OneDrive OneNote Publisher" /eula:"TRUE" -y
+choco install office365business --params="/productid:O365HomePremRetail" /exclude:"Access Groove Lync OneDrive OneNote Publisher" /eula:"TRUE" -y
 
 # Network Miner
 Invoke-WebRequest -Uri "https://www.netresec.com/?download=NetworkMiner" -OutFile "c:\users\vagrant\desktop\networkminer.zip"
