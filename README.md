@@ -37,7 +37,7 @@ This is pretty straight forward, but you'll need to do a bit of preparation work
   - Your Fleet URL
   - Your Fleet enrollment token for the policy you're going to use
 
-If you need help with the Elastic parts, you can use this [dev (read, **NOT FOR PRODUCTION**) project](https://github.com/peasead/elastic-container) or check out https://elastic.co. The dev project will require some tuning as it runs in Docker, not Elastic Cloud.
+If you want to try a local Elastic Stack, you can use this [dev (read, **NOT FOR PRODUCTION**) project](https://github.com/peasead/elastic-container). The dev project will require some tuning as it runs in Docker, not Elastic Cloud. Create an Issue and I can probably help with some config updates.
 
 ### Preparation
 
