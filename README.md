@@ -96,16 +96,3 @@ Destroy everything and start over
 ```
 vagrant destroy -f
 ```
-
-## Troubleshooting
-
-It could be me, but I have noticed in some situations that the box will stall here and eventually time out:
-
-```
- INFO winrmshell:   - Host: 127.0.0.1
- INFO winrmshell:   - Port: 55985
- INFO winrmshell:   - Username: vagrant
- INFO winrmshell:   - Transport: negotiate
- ```
-
-I have opened an [Issue](https://github.com/gusztavvargadr/packer/issues/276) with the Vagrant box owner, but to get around this, you can open up VirtualBox, click on "Show" and log in to the box with `vagrant:vagrant` and the install will finish. Not sure why that is, but that seems to get over this while we wait for a fix...or it could just be me.
