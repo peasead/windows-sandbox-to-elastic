@@ -11,6 +11,7 @@ Once you spin this up, you'll have:
 * Packetbeat
 * Elastic Agent
 * Sysmon w/SOS config
+* OpenVPN
 * Microsoft Office (Word, PowerPoint, Excel, Outlook, etc.)
 * Adobe Reader
 * Wireshark
@@ -36,6 +37,7 @@ This is pretty straight forward, but you'll need to do a bit of preparation work
   - Your Elastic Cloud ID
   - Your Fleet URL
   - Your Fleet enrollment token for the policy you're going to use
+  - (Optional) Your OpenVPN configuration and authentication credentials
 
 If you want to try a local Elastic Stack, you can use this [dev (read, **NOT FOR PRODUCTION**) project](https://github.com/peasead/elastic-container). The dev project will require some tuning as it runs in Docker, not Elastic Cloud. Create an Issue and I can probably help with some config updates.
 
@@ -53,6 +55,15 @@ Set-Variable -Name "elastic-passphrase" -Value "your-elastic-passphrase"
 Set-Variable -Name "elastic-cloud-id" -Value "your-elastic-cloud-id"
 ```
 
+If you have an OpenVPN configuration and creds, you can populate the variables in [provision.ps1](provision.ps1).
+
+```
+Set-Variable -Name "openvpn-username" -Value "your-openvpn-username"
+Set-Variable -Name "openvpn-passphrase" -Value "your-openvpn-passphrase"
+```
+
+You can copy/paste your OpenVPN into the configuration file located at `c:\program files\openvpn\config\openvpn.ovpn`
+
 ### Let's Go
 
 Let's get after it.
@@ -65,7 +76,7 @@ vagrant up
 
 ## Tips
 
-These must be run from the `windows-10-sandbox-to-elastic\` directory.
+These must be run from the `windows-10-sandbox-to-elastic\` directory on your host.
 
 Connect via RDP (may  have to run twice if RDP program isn't open)
 ```
@@ -96,3 +107,6 @@ Destroy everything and start over
 ```
 vagrant destroy -f
 ```
+
+Initiate a VPN connection
+Run the `vpn-connect.ps1` file on the Desktop

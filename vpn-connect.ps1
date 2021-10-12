@@ -1,0 +1,1 @@
+& "C:\Program Files\OpenVPN\bin\openvpn.exe" --config "C:\Program Files\OpenVPN\config\openvpn.ovpn" --auth-user-pass "C:\Program Files\OpenVPN\config\openvpn-auth.conf" --auth-nocache

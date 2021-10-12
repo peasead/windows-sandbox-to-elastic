@@ -10,6 +10,10 @@ Set-Variable -Name "elastic-username" -Value "your-elastic-stack-username (defau
 Set-Variable -Name "elastic-passphrase" -Value "your-elastic-passphrase"
 Set-Variable -Name "elastic-cloud-id" -Value "your-elastic-cloud-id"
 
+## OpenVPN Authentication
+Set-Variable -Name "openvpn-username" -Value "your-openvpn-username"
+Set-Variable -Name "openvpn-passphrase" -Value "your-openvpn-passphrase"
+
 # Install Chocolatey
 choco upgrade all -y
 refreshenv
@@ -39,6 +43,12 @@ start-service winlogbeat
 Invoke-WebRequest -Uri https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-${elastic-version}-windows-x86_64.zip -OutFile "c:\users\vagrant\Desktop\elastic-agent.zip"
 Expand-Archive -F c:\users\vagrant\desktop\elastic-agent.zip -DestinationPath c:\users\vagrant\desktop\elastic-agent
 & c:\users\vagrant\Desktop\elastic-agent\elastic-agent-${elastic-version}-windows-x86_64\elastic-agent.exe install -f --url=${elastic-fleet-url} --enrollment-token=${elastic-fleet-policy-enrollment-token}
+
+# OpenVPN
+choco install openvpn -y
+(Get-Content "c:\users\vagrant\desktop\openvpn-auth.conf").replace('openvpn-username', ${openvpn-username}) | Set-Content "c:\users\vagrant\desktop\openvpn-auth.conf"
+(Get-Content "c:\users\vagrant\desktop\openvpn-auth.conf").replace('openvpn-passphrase', ${openvpn-passphrase}) | Set-Content "c:\users\vagrant\desktop\openvpn-auth.conf"
+Move-item -force "c:\users\vagrant\desktop\openvpn-auth.conf" "c:\\program files\\OpenVPN\\config\\openvpn-auth.conf"
 
 # WireShark
 choco install wireshark -y
