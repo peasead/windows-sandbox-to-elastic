@@ -1,14 +1,12 @@
-# Windows 10 Sandbox to Elastic Cloud
+# Windows 11 Sandbox to Elastic Cloud
 
-This project is aimed at rapidly building a Windows 10 system to use for dynamic malware analysis (sandbox), sending data to Elastic Cloud.
+This project is aimed at rapidly building a Windows 11 system to use for dynamic malware analysis (sandbox), sending data to Elastic Cloud.
 
 There is always improvements to be had, this may not work for malware with defensive capabilties, but this should get you going. 
 
 Once you spin this up, you'll have:
 
-* Windows 10
-* Winlogbeat
-* Packetbeat
+* Windows 11
 * Elastic Agent
 * Sysmon w/SOS config
 * OpenVPN
@@ -46,13 +44,9 @@ If you want to try a local Elastic Stack, you can use this [dev (read, **NOT FOR
 Before you run this, you'll need to update the variables in [provision.ps1](provision.ps1) to your environment.
 
 ```
-Set-Variable -Name "elastic-version" -Value "7.15.0" 
+Set-Variable -Name "elastic-version" -Value "8.1.1" 
 Set-Variable -Name "elastic-fleet-url" -Value "your-elastic-fleet-url"
 Set-Variable -Name "elastic-fleet-policy-enrollment-token" -Value "elastic-fleet-policy-enrollment-token"
-
-Set-Variable -Name "elastic-username" -Value "your-elastic-stack-username (default is elastic)"
-Set-Variable -Name "elastic-passphrase" -Value "your-elastic-passphrase"
-Set-Variable -Name "elastic-cloud-id" -Value "your-elastic-cloud-id"
 ```
 
 If you have an OpenVPN configuration and creds, you can populate the variables in [provision.ps1](provision.ps1).
