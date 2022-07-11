@@ -1,6 +1,6 @@
 # Define variables
 ## Elastic Agent / Fleet
-Set-Variable -Name "elastic-version" -Value "8.2.3" 
+Set-Variable -Name "elastic-version" -Value "8.3.2" 
 Set-Variable -Name "elastic-fleet-url" -Value "your-elastic-fleet-url"
 Set-Variable -Name "elastic-fleet-policy-enrollment-token" -Value "your-elastic-fleet-policy-enrollment-token"
 $ProgressPreference = 'SilentlyContinue'
