@@ -44,7 +44,7 @@ If you want to try a local Elastic Stack, you can use this [dev (read, **NOT FOR
 Before you run this, you'll need to update the variables in [provision.ps1](provision.ps1) to your environment.
 
 ```
-Set-Variable -Name "elastic-version" -Value "8.1.1" 
+Set-Variable -Name "elastic-version" -Value "8.3.2" 
 Set-Variable -Name "elastic-fleet-url" -Value "your-elastic-fleet-url"
 Set-Variable -Name "elastic-fleet-policy-enrollment-token" -Value "elastic-fleet-policy-enrollment-token"
 ```
@@ -63,14 +63,14 @@ You can copy/paste your OpenVPN into the configuration file located at `c:\progr
 Let's get after it.
 
 ```
-git clone https://github.com/peasead/windows-10-sandbox-to-elastic.git
+git clone https://github.com/peasead/windows-sandbox-to-elastic.git
 cd windows-10-sandbox-to-elastic
 vagrant up
 ```
 
 ## Tips
 
-These must be run from the `windows-10-sandbox-to-elastic\` directory on your host.
+These must be run from the `windows-sandbox-to-elastic\` directory on your host.
 
 Connect via RDP (may  have to run twice if RDP program isn't open)
 ```
