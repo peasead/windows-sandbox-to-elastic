@@ -64,7 +64,7 @@ Let's get after it.
 
 ```
 git clone https://github.com/peasead/windows-sandbox-to-elastic.git
-cd windows-10-sandbox-to-elastic
+cd windows-sandbox-to-elastic
 vagrant up
 ```
 
