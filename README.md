@@ -13,7 +13,7 @@ Once you spin this up, you'll have:
 * Microsoft Office (Word, PowerPoint, Excel, Outlook, etc.)
 * Adobe Reader
 * Wireshark
-* Collection/anlaysis on the Desktop (not installed)
+* Collection/analysis on the Desktop (not installed)
   * ApateDNS
   * NetworkMiner
   * SysInternals
