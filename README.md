@@ -44,7 +44,7 @@ If you want to try a local Elastic Stack, you can use this [dev (read, **NOT FOR
 Before you run this, you'll need to update the variables in [provision.ps1](provision.ps1) to your environment.
 
 ```
-Set-Variable -Name "elastic-version" -Value "8.3.2" 
+Set-Variable -Name "elastic-version" -Value "8.9.0" 
 Set-Variable -Name "elastic-fleet-url" -Value "your-elastic-fleet-url"
 Set-Variable -Name "elastic-fleet-policy-enrollment-token" -Value "elastic-fleet-policy-enrollment-token"
 ```
